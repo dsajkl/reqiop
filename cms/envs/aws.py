@@ -217,7 +217,8 @@ with open(CONFIG_ROOT / CONFIG_PREFIX + "auth.json") as auth_file:
 ############### XBlock filesystem field config ##########
 #if 'DJFS' in AUTH_TOKENS and AUTH_TOKENS['DJFS'] is not None:
 #    DJFS = AUTH_TOKENS['DJFS']
-if 'DJFS' in AUTH_TOKENS: DJFS = AUTH_TOKENS['DJFS']
+#if 'DJFS' in AUTH_TOKENS: 
+DJFS = AUTH_TOKENS['DJFS']
 
 
 EMAIL_HOST_USER = AUTH_TOKENS.get('EMAIL_HOST_USER', EMAIL_HOST_USER)
