@@ -99,7 +99,7 @@ FEATURES = {
 
     'ENABLE_DJANGO_ADMIN_SITE': True,  # set true to enable django's admin site, even on prod (e.g. for course ops)
     'ENABLE_SQL_TRACKING_LOGS': False,
-    'ENABLE_LMS_MIGRATION': False,
+    'ENABLE_LMS_MIGRATION': True,
     'ENABLE_MANUAL_GIT_RELOAD': False,
 
     'ENABLE_MASQUERADE': True,  # allow course staff to change to student view of courseware
@@ -895,6 +895,12 @@ TEMPLATE_LOADERS = (
     'edxmako.makoloader.MakoFilesystemLoader',
     'edxmako.makoloader.MakoAppDirectoriesLoader',
 
+     ('django.template.loaders.cached.Loader', (
+        'django.template.loaders.filesystem.Loader',
+        'django.template.loaders.app_directories.Loader',
+         )),
+    
+    
     # 'django.template.loaders.filesystem.Loader',
     # 'django.template.loaders.app_directories.Loader',
 
@@ -1368,6 +1374,9 @@ INSTALLED_APPS = (
     'djcelery',
     'south',
 
+
+
+
     # Database-backed configuration
     'config_models',
 
@@ -1485,6 +1494,12 @@ INSTALLED_APPS = (
 
     # Surveys
     'survey',
+
+    'parent_eng',
+
+  #  'screamshot',
+   # 'ParerntApp',
+
 )
 
 ######################### MARKETING SITE ###############################

@@ -1,0 +1,29 @@
+<%! from django.utils.translation import ugettext as _ %>
+<%! from django.core.urlresolvers import reverse %>
+
+<%inherit file="main.html" />
+
+<body>
+                <h1> WELCOME IN PARENT ENGAGEMENT </h1>
+</body>
+<P>Data already exist:</p>
+ 
+
+<pre>
+<label for="p_Name">ParentName:   </label><label for="Name"> ${ name }  </label>
+<label for="p_email"> <br>ParentEmail:   </label> <label for="email">${ email }   </label>
+<label for="p_phoneNum"> <br>ParentPhone<br>        number:   </label><label for="phone"> ${ phone }   </label>
+
+<br>
+<br>
+</pre>
+       
+
+
+
+<ul>
+        <li> <a href="sendmail/">sendmail</a> </li>     <li> <a href="url">link text</a> </li>
+
+
+</ul>
+

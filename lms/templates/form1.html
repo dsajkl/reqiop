@@ -1,0 +1,42 @@
+
+<%! from django.utils.translation import ugettext as _ %>
+<%! from django.template import RequestContext %>
+<%! from third_party_auth import pipeline %>
+<%! from microsite_configuration import microsite %>
+
+<%!
+  from django.core.urlresolvers import reverse
+%>
+
+<%
+  cert_name_short = settings.CERT_NAME_SHORT
+  cert_name_long = settings.CERT_NAME_LONG
+%>
+
+<%inherit file="main.html" />
+
+
+
+
+<!--{%extends "parent/base.html"%}-->
+
+
+{%block content%}
+
+<div>
+	<form action="create/" method="post">
+	{% csrf_token %}	
+
+
+	
+		{{form.as_p}}
+		
+
+			<input type="submit"  value="Submit"/>
+
+	</form>
+
+</div>
+
+{%endblock%}
+

@@ -19,6 +19,8 @@ urlpatterns = ('',  # nopep8
     url(r'^login$', 'student.views.signin_user', name="signin_user"),
     url(r'^register$', 'student.views.register_user', name="register_user"),
 
+#    url(r'^url/$', ParerntApp.views.home),
+
     url(r'^admin_dashboard$', 'dashboard.views.dashboard'),
 
     url(r'^change_email$', 'student.views.change_email_request', name="change_email"),
@@ -72,6 +74,10 @@ urlpatterns = ('',  # nopep8
 
     # Feedback Form endpoint
     url(r'^submit_feedback$', 'util.views.submit_feedback'),
+
+    url(r'^parentengagement/$', 'parent_eng.views.home'),
+     url(r'^parentengagement/create/$', 'parent_eng.views.create'),
+
 
 )
 
@@ -299,6 +305,14 @@ if settings.COURSEWARE_ENABLED:
         # Takes optional student_id for instructor use--shows profile as that student sees it.
         url(r'^courses/{}/progress/(?P<student_id>[^/]*)/$'.format(settings.COURSE_ID_PATTERN),
             'courseware.views.progress', name="student_progress"),
+
+
+	 url(r'^courses/{}/progress/jjj$'.format(settings.COURSE_ID_PATTERN),
+            'courseware.views.progress'),
+
+
+
+
 
         # For the instructor
         url(r'^courses/{}/instructor$'.format(settings.COURSE_ID_PATTERN),
