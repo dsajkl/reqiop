@@ -63,12 +63,12 @@ class VerifyView(View):
         course_id = CourseKey.from_string(course_id)
         # If the user has already been verified within the given time period,
         # redirect straight to the payment -- no need to verify again.
-        if SoftwareSecurePhotoVerification.user_has_valid_or_pending(request.user):
-            return redirect(
+        #if SoftwareSecurePhotoVerification.user_has_valid_or_pending(request.user):
+        return redirect(
                 reverse('verify_student_verified',
                         kwargs={'course_id': course_id.to_deprecated_string()}) + "?upgrade={}".format(upgrade)
             )
-        elif CourseEnrollment.enrollment_mode_for_user(request.user, course_id) == ('verified', True):
+        if CourseEnrollment.enrollment_mode_for_user(request.user, course_id) == ('verified', True):
             return redirect(reverse('dashboard'))
         else:
             # If they haven't completed a verification attempt, we have to
